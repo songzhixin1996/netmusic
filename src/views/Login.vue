@@ -4,10 +4,16 @@
             <img src="../assets/logo.jpg">
         </div>
         <div class="select">
-            <div>手机号登录</div>
-            <div>注册</div>
             <div>
-                <router-link to="asd">游客登录</router-link>
+                <router-link to="phonelogin">手机号登录</router-link>
+            </div>
+            <div>
+                <router-link to="regist">注册</router-link>
+            </div>
+            <div>
+                <router-link to="asd">
+                    <span>游客试用</span>
+                </router-link>
             </div>
         </div>
         <div class="other">
@@ -28,37 +34,46 @@ export default {};
 
 <style lang="scss" scoped>
 .logo {
+    padding-top: 25%;
     img {
-        margin: 10% auto;
         width: 20%;
         height: 20%;
     }
 }
 .select {
-    color: red;
+    padding: 20% 0 0;
     div {
         height: 2rem;
         line-height: 2rem;
         border: 1px solid red;
         border-radius: 5%/50%;
-        margin: 5% 5%;
+        margin: 5% 10%;
+        a {
+            text-decoration: none;
+            color: red;
+        }
         &:last-child {
             color: gray;
             border: 0;
-            a:visited {
+            a {
                 color: gray;
+                text-decoration: none;
+                span {
+                    border-bottom: 1px solid gray;
+                    font-size: 0.8rem;
+                }
             }
         }
     }
 }
 .other {
-    position: absolute;
-    bottom: 3%;
+    padding-top: 35%;
     width: 100%;
     > div:first-child {
         text-align: center;
         color: gray;
         margin-bottom: 5%;
+        font-size: 0.8rem;
     }
     .other-list {
         display: flex;
