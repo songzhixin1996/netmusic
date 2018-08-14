@@ -1,13 +1,27 @@
 <template>
     <div>
-        <button>
+        <button :style="sytleObj">
             <slot>确定</slot>
         </button>
     </div>
 </template>
 
 <script>
-export default {};
+export default {
+    props: ['type'],
+    computed: {
+        sytleObj() {
+            let obj;
+            if (this.type === 'blank') {
+                obj = {
+                    backgroundColor: '#fff',
+                    color: '#000'
+                };
+            }
+            return obj;
+        }
+    }
+};
 </script>
 
 <style lang="scss" scoped>

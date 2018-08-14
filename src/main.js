@@ -4,6 +4,10 @@ import router from './router'
 import store from './store'
 import upperFirst from 'lodash/upperFirst'
 import camelCase from 'lodash/camelCase'
+import axios from 'axios'
+
+axios.defaults.baseURL = 'http://192.168.1.108:3000';
+Vue.prototype.$axios = axios
 
 const requireComponent = require.context(
     // 其组件目录的相对路径
