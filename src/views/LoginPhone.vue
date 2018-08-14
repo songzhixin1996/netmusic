@@ -1,8 +1,8 @@
 <template>
     <div>
-        <AccountInput></AccountInput>
-        <BaseButton value="登录">
-        </BaseButton>
+        <BaseHead>手机号登录</BaseHead>
+        <AccountInput :account.sync="account" :password.sync="password"></AccountInput>
+        <BaseButton>登录</BaseButton>
     </div>
 </template>
 
@@ -10,10 +10,24 @@
 import AccountInput from '../components/AccountInput';
 export default {
     data() {
-        return {};
+        return {
+            account: '',
+            password: ''
+        };
     },
     components: {
         AccountInput
+    },
+    methods: {
+        storeAccount() {
+            this.$store.commit('setAccount', {
+                account: this.account,
+                password: this.password
+            });
+        },
+        handleLogin() {
+            this.storeAccount();
+        }
     }
 };
 </script>

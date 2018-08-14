@@ -1,13 +1,13 @@
 <template>
     <div>
-        <button>{{value}}</button>
+        <button>
+            <slot>确定</slot>
+        </button>
     </div>
 </template>
 
 <script>
-export default {
-    props: ['value']
-};
+export default {};
 </script>
 
 <style lang="scss" scoped>
@@ -15,6 +15,7 @@ div {
     padding: 0 5%;
 }
 button {
+    outline: none;
     background-color: red;
     color: white;
     padding: 10px 20px;
@@ -25,6 +26,9 @@ button {
     font-size: 1rem;
     border: 1px solid red;
     border-radius: 5%/50%;
+    &:active {
+        background-color: rgb(163, 56, 56);
+    }
 }
 </style>
 
