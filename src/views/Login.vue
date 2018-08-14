@@ -33,6 +33,9 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
+.login {
+    text-align: center;
+}
 .logo {
     padding-top: 25%;
     img {
